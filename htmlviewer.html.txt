@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="hi">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>फास्ट बॉलिंग एनीमेशन</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f0f8ff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      .field {
+        width: 80%;
+        height: 200px;
+        background-color: #4caf50;
+        position: relative;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .bowler {
+        position: absolute;
+        bottom: 20px;
+        left: 20px;
+        width: 60px;
+        height: 100px;
+        background-color: #8e44ad;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        animation: bowlMotion 2s linear infinite;
+      }
+
+      .bowler .arm {
+        position: absolute;
+        top: 10px;
+        left: 0;
+        width: 10px;
+        height: 50px;
+        background-color: #ff6347;
+        transform-origin: top;
+        animation: armSwing 1s infinite;
+      }
+
+      .ball {
+        position: absolute;
+        bottom: 40px;
+        left: 60px;
+        width: 20px;
+        height: 20px;
+        background-color: #f39c12;
+        border-radius: 50%;
+        animation: ballMotion 2s linear infinite;
+      }
+
+      @keyframes bowlMotion {
+        0% {
+          transform: translateX(0);
+        }
+
+        50% {
+          transform: translateX(400px);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      @keyframes armSwing {
+
+        0%,
+        100% {
+          transform: rotate(0deg);
+        }
+
+        50% {
+          transform: rotate(-45deg);
+        }
+      }
+
+      @keyframes ballMotion {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(400px);
+        }
+      }
+
+      .instruction {
+        position: absolute;
+        top: 30px;
+        left: 150px;
+        font-size: 18px;
+        color: #333;
+        font-family: Arial, sans-serif;
+        animation: blinkText 2s infinite;
+      }
+
+      @keyframes blinkText {
+        0% {
+          opacity: 1;
+        }
+
+        50% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="field">
+      <div class="bowler">
+        <div class="arm"></div>
+      </div>
+      <div class="ball"></div>
+      <div class="instruction">फास्ट बॉलिंग सीखें!</div>
+    </div>
+    <script>
+      // You can modify the speed of the ball and the bowler's motion by adjusting the animation timings.
+    </script>
+  </body>
+</html>
